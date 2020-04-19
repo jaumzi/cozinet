@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  mysql:
+    networks:
+      - default
+#    user: ${UID}:${UID}
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      - MYSQL_DATABASE=cozinet
+      - MYSQL_ROOT_PASSWORD=cozinet_321
+      - MYSQL_USER=cozinet
+      - MYSQL_PASSWORD=cozinet_321
+    ports:
+      - 3306:3306
+    volumes:
+#      - "/var/run/mysqld/mysqld.sock:/var/run/mysqld/mysqld.sock"
+    - "./mysql_datadir:/var/lib/mysql"
+    #  - "es-mysql-data:/var/lib/mysql"
+  adminer:
+    networks:
+      - default
+#    user: ${UID}:${UID}
+    image: adminer
+    environment:
+      - ADMINER_DEFAULT_SERVER=mysql
+      - ADMINER_DESIGN=esterka
+    ports:
+      - "8080:8080"

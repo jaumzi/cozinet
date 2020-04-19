@@ -1,0 +1,31 @@
+{
+  "name": "cozinet_api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "add-migration": "node npm-scripts/add-migration",
+    "update-database": "node npm-scripts/update-database",
+    "init-database": "node npm-scripts/init-database"
+  },
+  "author": "jaumzi",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.24.0",
+    "mysql2": "^2.1.0",
+    "nodemailer": "^6.4.6",
+    "sequelize": "^5.21.6"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2",
+    "sequelize-cli": "^5.5.1"
+  }
+}
